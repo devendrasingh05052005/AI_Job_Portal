@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>Applications for "{{ job.title }}"</h2>
+        <a href="{% url 'recruiter_dashboard' %}" class="btn btn-secondary">Go back to Dashboard</a>
+        <hr>
+    </div>
+</div>
+
+{% if applications %}
+<div class="row">
+    <div class="col-12">
+        <p>Total Applications: <strong>{{ applications.count }}</strong></p>
+        <ul class="list-group">
+            {% for application in applications %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">Candidate: {{ application.candidate.username }}</h5>
+                    <p class="mb-1">Score: <span class="badge bg-info">{{ application.ranking_score|floatformat:2 }}%</span></p>
+                    <p class="mb-1">Status: <span class="badge bg-secondary">{{ application.status }}</span></p>
+                </div>
+                <div>
+                    <a href="{{ application.resume.url }}" target="_blank" class="btn btn-sm btn-info">Download Resume</a>
+                    <a href="{% url 'shortlist_application' application.id %}" class="btn btn-sm btn-success">Shortlist</a>
+                    <a href="{% url 'reject_application' application.id %}" class="btn btn-sm btn-danger">Reject</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% else %}
+<p>Abhi is job ke liye koi application nahi hai.</p>
+{% endif %}
+{% endblock %}

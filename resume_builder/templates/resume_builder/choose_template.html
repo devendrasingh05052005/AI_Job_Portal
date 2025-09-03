@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Resume Template</title>
+</head>
+<body>
+    <h2>Choose Your Resume Template</h2>
+    <p>Apna pasandida template chunein aur apna resume banayein.</p>
+    <hr>
+    
+    {% for template in templates %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block;">
+            <h3>{{ template.name }}</h3>
+            <p>Template {{ template.id }}</p>
+            <a href="{% url 'resume_builder' template.id %}">
+                <button>Choose This Template</button>
+            </a>
+        </div>
+    {% endfor %}
+
+    <hr>
+    <a href="{% url 'home' %}">Go back to Home</a>
+</body>
+</html>

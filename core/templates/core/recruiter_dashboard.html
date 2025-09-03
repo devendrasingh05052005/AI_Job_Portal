@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>Welcome, {{ request.user.username }}!</h2>
+        <p>Aap yahan se jobs post kar sakte hain aur candidates ko manage kar sakte hain.</p>
+        
+        <form action="{% url 'logout' %}" method="post" class="d-inline-block">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Overall Analytics</h3>
+        <p>Total Applications: <strong>...</strong></p>
+        <p>Shortlisted Candidates: <strong>...</strong></p>
+        <p>Rejected Candidates: <strong>...</strong></p>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Aapki Post Ki Hui Jobs</h3>
+        <a href="{% url 'post_job' %}" class="btn btn-primary mb-3">Nayi Job Post Karein</a>
+        <ul class="list-group">
+            {% for job in jobs %}
+            <li class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ job.title }}</h5>
+                    <small>...</small>
+                </div>
+                <p class="mb-1">{{ job.description|truncatechars:150 }}</p>
+                <a href="{% url 'recruiter_job_applications' job.id %}" class="btn btn-sm btn-success mt-2">View Applications</a>
+            </li>
+            {% empty %}
+            <p>Abhi tak koi job post nahi ki hai.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

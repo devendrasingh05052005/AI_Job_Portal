@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row text-center mt-5">
+    <div class="col-12">
+        <h1 class="display-4">Welcome to AI-Powered ATS</h1>
+        <p class="lead">Kripya apni भूमिका chunein:</p>
+        <hr>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card p-3 mb-3">
+            <h3>Candidate</h3>
+            <p>Jobs search karne aur apply karne ke liye.</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'candidate_signup' %}" class="btn btn-secondary mt-2">Sign Up</a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card p-3 mb-3">
+            <h3>Recruiter</h3>
+            <p>Candidates screen karne aur jobs post karne ke liye.</p>
+            <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card p-3 mb-3">
+            <h3>Free Resume Builder</h3>
+            <p>Apna resume banane aur AI-based suggestions lene ke liye.</p>
+            <a href="{% url 'choose_template' %}" class="btn btn-info">Build Resume Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

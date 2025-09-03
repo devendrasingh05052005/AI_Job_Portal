@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Builder</title>
+</head>
+<body>
+    <h2>Free Resume Builder - Template {{ template_id }}</h2>
+    <p>Apni jaankari bharein aur AI-based suggestions payein.</p>
+    
+    <form action="{% url 'resume_builder' template_id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit">Get Suggestions</button>
+    </form>
+    
+    {% if ai_suggestions %}
+        <h3>AI-Powered Suggestions for Work Experience:</h3>
+        <ul>
+            {% for suggestion in ai_suggestions %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+        <p><i>Copy these bullet points to your resume.</i></p>
+
+        <hr>
+        <a href="{% url 'download_resume' %}">
+            <button>Download Final Resume</button>
+        </a>
+    {% endif %}
+
+    <hr>
+    <a href="{% url 'choose_template' %}">Go back to Templates</a>
+    <br>
+    <a href="{% url 'home' %}">Go back to Home</a>
+</body>
+</html>
