@@ -1,38 +1,203 @@
-{% extends 'core/base.html' %}
+{% load static %}
 
-{% block content %}
-<div class="row text-center mt-5">
-    <div class="col-12">
-        <h1 class="display-4">Welcome to AI-Powered ATS</h1>
-        <p class="lead">Kripya apni भूमिका chunein:</p>
-        <hr>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="row mt-4">
-    <div class="col-md-4">
-        <div class="card p-3 mb-3">
-            <h3>Candidate</h3>
-            <p>Jobs search karne aur apply karne ke liye.</p>
-            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
-            <a href="{% url 'candidate_signup' %}" class="btn btn-secondary mt-2">Sign Up</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-ATS</title>
+    <link rel="shortcut icon" href="{% static '/images/20251114_202644.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+</head>
+
+<body>
+    <nav>
+        
+        <div style="display: flex;gap: 10px;">
+        <img style="border-radius: 50px;height: 40px;width: 40px;" src="{% static '/images/WhatsApp Image 2025-10-31 at 11.33.40 PM.jpeg' %}" alt="">
+        <h1>AI-ATS</h1>
         </div>
+        <div class="nav-part2">
+            
+            <div class="nav-elem">
+                <h4 style="color: rgb(0, 0, 0);font-weight: 600;">Jobs</h4>
+                <h5><span>AI & ML</span></h5>
+                <h5><span>Data Analytics</span></h5>
+                <h5><span>UI/UX Design</span></h5>
+                <h5><span>App Development</span></h5>
+                
+            </div>
+            <div class="nav-elem">
+                <h4 style="color: rgb(0, 0, 0);font-weight: 600;">Companies</h4>
+                <h5><span>Top Companies</span></h5>
+                <h5><span>Internal Companies</span></h5>
+                <h5><span>External Companies</span></h5>
+            </div>
+            <div class="nav-elem">
+                <h4>Services</h4>
+                <h5><span>Jobs for you</span></h5>
+                <h5><span>Resume ranking</span></h5>
+                <h5><span>Resume templates</span></h5>
+                <h5><span>Resume maker</span></h5>
+            </div>
+            <div class="nav-elem">
+                <h4>Features</h4>
+
+                <h5><span style="color: rgb(0, 0, 0);font-weight: 700;">Candidate</span></h5>
+                <h5><span>Login/Signup</span></h5>
+                <h5><span>Job Search & Apply</span></h5>
+                <h5><span>Resume Builder</span></h5>
+
+            </div>
+            <div class="nav-elem">
+                <h4>               </h4>
+                <br>
+                <h5><span style="color: rgb(0, 0, 0);font-weight: 700;">Recruiter</span></h5>
+                <h5><span>Post a Job</span></h5>
+                
+                <h5><span>Manage Applications</span></h5>
+                <h5><span>Resume ranking</span></h5>
+            </div>
+        </div>
+        <div style="display: flex;gap: 15px;">
+        <a class="loginbtn" href="{% url 'candidate_login' %}">Login</a>
+        <a class="loginbtn" href="{% url 'candidate_signup' %}">Register</a>
+
+        <div class="dropdown">
+            <a href="" class="dropbtn">For employee</a>
+                <ul class="dropdown-content">
+                <li><a href="{% url 'recruiter_login' %}">Recruiter</a></li>
+                <li><a href="{% url 'choose_template' %}">Resume Builder</a></li>
+            </ul>
+        </div>
+        
+        
+
+        </div>
+        <div id="nav-bottom">
+            
+        </div>
+        
+    </nav>
+    <div id="main">
+        <div id="page1">
+            <div style="display: flex;justify-content: space-between;margin-left: 10vw;">
+                <div style="height: 100%;width: 100%;">
+                    <h1 style="color: rgb(0, 63, 179);">Start Your Career Journey Here</h1>
+                    <br>
+                    <div class="getbtn" style="align-items: center;justify-content: center;border: 1px solid rgb(0, 64, 184);width: 175px;height: 55px;border-radius: 10px;">
+            <div class="getbtn" style="justify-content: center;align-items: center;display: flex;border: 1px solid rgb(0, 64, 184);border-radius: 10px;width: 170px;background-color: rgb(0, 64, 184);height: 50px;margin: 2px;">
+                <a href="{% url 'candidate_signup' %}" style="justify-content: center;align-items: center;"><h2 style="font-size: 20px;color: rgb(255, 255, 255);">Get started</h2></a>
+                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img" fill="rgb(255, 255, 255)" viewBox="0 0 24 24" aria-hidden="true" class="svg"><path d="M17.864 13.138H2.94a1.1 1.1 0 01-.808-.329 1.1 1.1 0 01-.33-.808c0-.32.11-.589.33-.808.22-.22.49-.33.808-.33h14.918l-3.66-3.672a1.094 1.094 0 01-.332-.79 1.06 1.06 0 01.332-.808c.212-.211.478-.316.799-.314.321.002.587.109.799.32l5.606 5.606c.112.112.192.236.242.373a1.243 1.243 0 010 .855c-.05.134-.13.258-.242.37l-5.606 5.611a1.078 1.078 0 01-.787.32 1.13 1.13 0 01-1.152-1.128c0-.31.113-.58.341-.808l3.666-3.66z"></path></svg>
+            </div>
+        </div>
+                    <p>Streamline your job search, manage applications effortlessly, and access smart insights to boost your career growth.</p>
+                </div>
+                <div style="height: 100%;width: 100%;" id="page1img">
+                    <img style="width: 30vw;height: 20vw;" src="{% static '/images/ChatGPT Image Nov 5, 2025, 10_26_30 PM.png' %}" alt="">
+                </div>
+
+            </div>
+            <div id="page1h2" style="align-items: center;">
+                <h3 style="color: rgb(0, 47, 133);">External Companies</h3>
+            </div>
+            
+            
+            <div id="moving-div">
+                <div id="blur-left"></div>
+                <div class="move">
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" alt="">
+                    <img src="https://connect-assets.prosple.com/cdn/ff/bVAX2S6JFNuvzZbeGOsDtuxrXcRR6aNpC644QBoIxik/1652245109/public/inline-images/logo-deloitte-png.png" alt="">
+                    <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/08/tata-consultancy-services-logo-tcs.png" alt="">
+                    <img src="https://www.infosys.com/content/dam/infosys-web/en/global-resource/media-resources/infosys-logo-png.png" alt="">
+                    <img src="https://www.freepnglogos.com/uploads/microsoft-logo-png-transparent-background-1.png" alt="">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir0JQmtX2BHtf3ABZjNGU5ShlNniULH7Rii81-g2kS_xAKcNULExZUX_-y-XPwKMxMeAXopNga184L2bNjkRRG_hRYdX2ex3_OI44i1rAmeZnngjjm_dQyfv8Io0IIJd8w02c8KtXbv94iCsQjraSu8U9CR7MoRnvPELuSRY8G_Q7hu8h_lbSZXLOG/s2560/paytm-logo.png" alt="">
+                    <img src="http://pluspng.com/img-png/nvidia-png-nvidia-png-image-7322.png" alt="">
+                    <img src="https://www.thedesigngym.com/wp-content/uploads/2019/05/cisco-logo-transparent-768x407.png" alt="">
+                </div>
+                <div class="move">
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png" alt="">
+                    <img src="https://connect-assets.prosple.com/cdn/ff/bVAX2S6JFNuvzZbeGOsDtuxrXcRR6aNpC644QBoIxik/1652245109/public/inline-images/logo-deloitte-png.png" alt="">
+                    <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/08/tata-consultancy-services-logo-tcs.png" alt="">
+                    <img src="https://www.infosys.com/content/dam/infosys-web/en/global-resource/media-resources/infosys-logo-png.png" alt="">
+                    <img src="https://www.freepnglogos.com/uploads/microsoft-logo-png-transparent-background-1.png" alt="">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir0JQmtX2BHtf3ABZjNGU5ShlNniULH7Rii81-g2kS_xAKcNULExZUX_-y-XPwKMxMeAXopNga184L2bNjkRRG_hRYdX2ex3_OI44i1rAmeZnngjjm_dQyfv8Io0IIJd8w02c8KtXbv94iCsQjraSu8U9CR7MoRnvPELuSRY8G_Q7hu8h_lbSZXLOG/s2560/paytm-logo.png" alt="">
+                    <img src="http://pluspng.com/img-png/nvidia-png-nvidia-png-image-7322.png" alt="">
+                    <img src="https://www.thedesigngym.com/wp-content/uploads/2019/05/cisco-logo-transparent-768x407.png" alt="">
+                </div>
+                <div id="blur-right"></div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div id="page3">
+            <div style="display: flex;gap: 7px;align-items: center;justify-content: center;">
+                <h1 style="color: black;font-size: 55px;">Move forward in</h1>
+                <h1 style="color: rgb(0, 59, 167);font-size: 55px;">your career</h1><br>
+            </div>
+                <h1 style="color: black;font-size: 40px;">by exploring these features</h1>
+
+            
+            <br>
+
+            
+            <p>Find the right job that matches your skills and ambitions — Your next job is waiting.</p>
+            <div style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;gap: 10vw;margin-top: 5vw;">
+                <div><img src="{% static '/images/png2.png' %}" alt=""><br><br><h4 style="color: black;">Search dream jobs</h4></div>
+                <div><img src="{% static '/images/png1.png' %}" alt=""><br><br><h4 style="color: black;">Apply for Job</h4></div>
+                <div><img src="{% static '/images/png3.png' %}" alt=""><br><br><h4 style="color: black;">Grow your career</h4></div>
+
+            </div>
+        </div>
+        <div id="page4">
+            <h1 style="color: rgb(0, 0, 0);margin-top: 150px;font-size: 50px;">Land your dream job with</h1>
+            <div style="display: flex;gap: 6px;align-items: center;justify-content: center;">
+                <h1 style="color: rgb(0, 64, 184);font-size: 50px;">AI-powered</h1>
+                <h1 style="color: black;font-size: 50px;">resumes.</h1>
+
+            </div>
+            <br>
+
+            
+            <p>
+                Create, edit and download professional resumes with
+            </p>
+            <p>AI-powered assistance</p>
+            <br>
+            <br>
+            <div style="align-items: center;justify-content: center;border: 1px solid rgb(0, 64, 184);width: 175px;height: 55px;border-radius: 50px;margin-left: 670px;">
+            <div style="justify-content: center;align-items: center;display: flex;border: 1px solid rgb(0, 64, 184);border-radius: 50px;width: 170px;background-color: rgb(0, 64, 184);height: 50px;margin: 2px;">
+                <a href="{% url 'choose_template' %}" style="justify-content: center;align-items: center;"><h2 style="font-size: 20px;color: rgb(255, 255, 255);">Get started</h2></a>
+                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img" fill="rgb(255, 255, 255)" viewBox="0 0 24 24" aria-hidden="true" class="svg"><path d="M17.864 13.138H2.94a1.1 1.1 0 01-.808-.329 1.1 1.1 0 01-.33-.808c0-.32.11-.589.33-.808.22-.22.49-.33.808-.33h14.918l-3.66-3.672a1.094 1.094 0 01-.332-.79 1.06 1.06 0 01.332-.808c.212-.211.478-.316.799-.314.321.002.587.109.799.32l5.606 5.606c.112.112.192.236.242.373a1.243 1.243 0 010 .855c-.05.134-.13.258-.242.37l-5.606 5.611a1.078 1.078 0 01-.787.32 1.13 1.13 0 01-1.152-1.128c0-.31.113-.58.341-.808l3.666-3.66z"></path></svg>
+            </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <footer>
+        <p>&copy; 2025 AI-ATS. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms</a> | 
+            <a href="#">Support</a>
+        </p>
+    </footer>
     </div>
     
-    <div class="col-md-4">
-        <div class="card p-3 mb-3">
-            <h3>Recruiter</h3>
-            <p>Candidates screen karne aur jobs post karne ke liye.</p>
-            <a href="{% url 'login' %}" class="btn btn-success">Login</a>
-        </div>
-    </div>
     
-    <div class="col-md-4">
-        <div class="card p-3 mb-3">
-            <h3>Free Resume Builder</h3>
-            <p>Apna resume banane aur AI-based suggestions lene ke liye.</p>
-            <a href="{% url 'choose_template' %}" class="btn btn-info">Build Resume Now</a>
-        </div>
-    </div>
-</div>
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static '/script.js' %}"></script>
+</body>
+
+</html>

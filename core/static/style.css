@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000000;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    
+}
+
+nav {
+    position: fixed;
+    /* background-color: rgb(0, 255, 68); */
+    display: flex;
+    align-items: flex-start;
+    height: 12vh;
+    width: 100%;
+    padding: 2vw 10.4vw;
+    justify-content: space-between;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+nav h1 {
+    font-size: 1.6vw;
+    color: rgb(0, 47, 133);
+}
+
+.nav-part2 {
+    display: flex;
+    gap: 2vw;
+    align-items: flex-start;
+    padding: 1vh 0;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-part2 h4 {
+    font-size: 0.73vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2.6vw;
+}
+
+.nav-part2 h5 {
+    margin-bottom: 1vw;
+    /* background-color: red; */
+    display: none;
+    overflow: hidden;
+}
+
+.nav-part2 h5 span {
+    font-size: 0.77vw;
+    font-weight: 400;
+    transform: translateY(25px);
+    display: inline-block;
+}
+
+.loginbtn {
+    background-color: rgb(0, 47, 133);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 1.1vw;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    border-radius: 50px;
+    border: none;
+}
+.loginbtn:hover{
+    background-color: rgb(0, 73, 207);
+}
+
+nav button svg {
+    height: 0.8vw;
+    margin-left: 1.6vw;
+}
+
+#nav-bottom {
+    width: 79%;
+    height: 0vh;
+    position: absolute;
+    /* background-color: red; */
+    top: 100%;
+    background-color: #ffffff;
+    z-index: 9;
+    border-bottom: 2px solid rgb(0, 47, 133);
+}
+
+.login{
+    padding: 5px;
+    padding-top: 5px;
+    border: 3px solid rgb(0, 47, 133);
+    text-decoration: none;
+    border-radius: 4px;
+    color: rgb(0, 47, 133);
+    font-size: 20px;
+    box-shadow: 1px rgb(0, 47, 133);
+    font-weight: 600;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    
+}
+.loginn{
+    color: rgb(0, 47, 133);
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.svg{
+    height: 20px;
+    width: 40px;
+
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page1 h1 {
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 5vw;
+    max-width: 5000px;
+    margin-top: 1vw;
+    color: rgb(0, 58, 166);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 0.6s ease forwards;
+    animation-delay: 0.3s;
+
+
+
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.getbtn{
+    transform: translateX(-40px);
+    animation: slideright 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+@keyframes slideright {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+    
+
+
+
+#page1 p {
+    font-size: 1vw;
+    margin-top: 10px;
+    max-width: 25vw;
+    
+    color: rgb(23, 23, 23);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 0.6s ease forwards;
+    animation-delay: 0.6s;
+}
+#page1h2{
+    color: rgb(0, 73, 209);
+    font-weight: 500;
+    border: 1px solid rgb(0, 47, 133);
+    
+    border-radius: 50px;
+    height: 2.5vw;
+    padding-top: 4px;
+    padding-left: 9px;
+    margin-top: 50px;
+    width: 13vw;
+
+}
+#page1img{
+    margin-left: 9vw;
+}
+#page1-something {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page1-something h4 {
+    font-weight: 400;
+    font-size: 1vw;
+    text-transform: lowercase;
+    margin-top: 0.5vw;
+    padding: 9px 18px;
+    border: 1px solid hsl(0, 0%, 65%);
+    border-radius: 50px;
+}
+
+#page1-something h4:nth-last-child(2) {
+    /* background-color: red; */
+    border: none;
+    padding: 2px;
+}
+
+#moving-div {
+    /* background-color: red; */
+    margin-top: 10vh;
+    position: absolute;
+    bottom: 3%;
+    white-space: nowrap;
+    padding: 1.2vw;
+    overflow: hidden;
+    width: 60%;
+    
+
+}
+
+#moving-div .move {
+    display: inline-block;
+    animation-name: mobe;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#moving-div .move img {
+    height: 2vw;
+    margin: 0 2vw;
+
+}
+
+@keyframes mobe {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+#blur-left {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, #ffffff, transparent);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#blur-right {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, transparent, #ffffff);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+#page3 {
+    height: 100%;
+    width: 100%;
+
+}
+#page3 h1{
+    text-align: center;
+    color: rgb(0, 64, 184);
+}
+#page3 p{
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+#page3 img{
+    height: 150px;
+    width: 150px;
+    
+}
+#page3 h4{
+    font-weight: 600;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+/* ==== DROPDOWN STYLES ==== */
+
+/* Container for the dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown button (Employee) */
+.dropbtn {
+  color: rgb(0, 41, 116);
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 2px solid rgb(0, 41, 116);
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.dropbtn:hover {
+  background-color: rgb(0, 41, 116);
+  color: white;
+}
+
+/* Dropdown menu container */
+.dropdown-content {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: #0a254000;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgb(0, 41, 116);
+  z-index: 100;
+  overflow: hidden;
+
+  /* Hidden by default */
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown links */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: rgb(0, 41, 116);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(0, 41, 116);
+  color: white;
+}
+
+/* Show dropdown when active */
+.dropdown-content.show {
+  max-height: 200px;  /* enough for the 2 options */
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+#page4 {
+    height: 100%;
+    width: 100%;
+
+}
+#page4 h1{
+    text-align: center;
+    color: rgb(0, 47, 133);
+    transform: translateY(40px);
+    animation: slideUp 0.6s ease forwards;
+    animation-delay: 0.3s;
+}
+#page4 p{
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+#page4 img{
+    height: 150px;
+    width: 150px;
+}
+#page4 h4{
+    font-weight: 600;
+    text-align: center;
+    color: rgb(0, 41, 116);
+}
+.btnshadow{
+    box-shadow: rgb(255, 255, 255);
+
+}
+.btnshadow :hover{
+    box-shadow: rgb(0, 81, 232);
+
+}
+footer {
+    background: linear-gradient(90deg, #0042a5, #002c72);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    border-top: 2px solid #001d48;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: #0d6efd;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+footer a:hover {
+    color: #66aaff;
+    text-shadow: 0 0 6px rgba(13, 110, 253, 0.7);
+}
+
+footer p {
+    margin: 5px 0;
+}
+.rahul{
+    color: #ec0000;
+}

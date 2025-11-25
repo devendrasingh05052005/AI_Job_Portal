@@ -2,8 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser, Job, Application, JobField
 
-# CustomUser model ko register karein
-# Taki is_candidate aur is_recruiter fields Admin Panel mein dikhein
+
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
     list_display = ['username', 'email', 'is_staff', 'is_candidate', 'is_recruiter']
