@@ -1,0 +1,19 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="ats_project",
+    version="1.0.0",
+    python_requires=">=3.10.0,<3.11.0",
+    packages=find_packages(),
+    install_requires=[
+        "Django==5.0.0",
+        "gunicorn==21.2.0",
+        "whitenoise==6.6.0",
+        "dj-database-url==2.1.0",
+        "python-dotenv==1.0.0",
+        "django-widget-tweaks==1.5.0",
+        "Pillow==10.0.0",
+        "psycopg2-binary==2.9.9",
+        "pytz==2023.3.post1"
+    ]
+)
