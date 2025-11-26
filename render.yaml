@@ -7,27 +7,18 @@ databases:
 services:
   - type: web
     name: ats-web
-    env: python
-    buildCommand: |
-      echo "==> Starting build process..."
-      chmod +x build.sh
-      ./build.sh
+    env: docker
+    buildCommand: ./build.sh
     startCommand: gunicorn ats_project.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.9
       - key: DJANGO_ENV
         value: production
       - key: SECRET_KEY
         generateValue: true
-      - key: WEB_CONCURRENCY
-        value: 4
       - key: ALLOWED_HOSTS
         value: "*"
       - key: DEBUG
         value: "False"
-      - key: DISABLE_COLLECTSTATIC
-        value: "0"
       - key: DATABASE_URL
         fromDatabase:
           name: ats_postgres
