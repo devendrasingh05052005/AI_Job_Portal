@@ -4,8 +4,8 @@ set -o errexit
 
 # Install system dependencies
 echo "==> Installing system dependencies..."
-sudo apt-get update
-sudo apt-get install -y python3-dev libpq-dev
+apt-get update
+apt-get install -y python3-dev libpq-dev
 
 # Create and activate virtual environment
 echo "==> Setting up virtual environment..."

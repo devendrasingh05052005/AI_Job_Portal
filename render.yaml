@@ -36,6 +36,3 @@ services:
     autoDeploy: true
     numInstances: 1
     healthCheckPath: /health/
-    env:
-      - PYTHONUNBUFFERED: true
-      - PYTHONHASHSEED: random
