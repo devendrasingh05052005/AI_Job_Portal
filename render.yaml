@@ -8,8 +8,9 @@ services:
   - type: web
     name: ats-web
     env: docker
-    buildCommand: ./build.sh
-    startCommand: gunicorn ats_project.wsgi:application --bind 0.0.0.0:$PORT
+    dockerfilePath: ./Dockerfile
+    plan: free
+    autoDeploy: true
     envVars:
       - key: DJANGO_ENV
         value: production
@@ -23,7 +24,5 @@ services:
         fromDatabase:
           name: ats_postgres
           property: connectionString
-    plan: free
-    autoDeploy: true
     numInstances: 1
     healthCheckPath: /health/
