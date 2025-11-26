@@ -3,14 +3,14 @@ services:
     name: ats-web
     env: python
     buildCommand: |
-      python -m pip install --upgrade pip
+      python -m pip install --upgrade pip setuptools wheel
       pip install -r requirements.txt
       python manage.py migrate
       python manage.py collectstatic --noinput
     startCommand: gunicorn ats_project.wsgi:application --bind 0.0.0.0:10000
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.9
+        value: 3.13.4
       - key: DJANGO_ENV
         value: production
       - key: SECRET_KEY
