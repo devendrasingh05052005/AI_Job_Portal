@@ -1,0 +1,26 @@
+databases:
+  - name: ats_postgres
+    databaseName: ats_database
+    user: ats_user
+    plan: free
+
+services:
+  - type: web
+    name: ats-web
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn ats_project.wsgi:application"
+    envVars:
+      - key: DJANGO_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ats_postgres
+          property: connectionString
+    plan: free

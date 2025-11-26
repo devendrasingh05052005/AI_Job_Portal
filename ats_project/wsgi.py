@@ -8,9 +8,18 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
 import os
-
 from django.core.wsgi import get_wsgi_application
+from dotenv import load_dotenv
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ats_project.settings")
+# Load environment variables from .env file
+load_dotenv()
 
+# Determine the settings module based on environment
+settings_module = "ats_project.settings"
+if os.environ.get('DJANGO_ENV') == 'production':
+    settings_module = "ats_project.production_settings"
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
+
+# This application object is used by any WSGI server configured to use this file.
 application = get_wsgi_application()
