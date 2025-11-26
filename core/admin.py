@@ -17,7 +17,6 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 
-# Baaki models ko register karein
 admin.site.register(Job)
 admin.site.register(Application)
 admin.site.register(JobField)
