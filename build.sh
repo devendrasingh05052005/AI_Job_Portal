@@ -2,11 +2,6 @@
 # Exit on error
 set -o errexit
 
-# Install system dependencies
-echo "==> Installing system dependencies..."
-apt-get update
-apt-get install -y python3-dev libpq-dev
-
 # Create and activate virtual environment
 echo "==> Setting up virtual environment..."
 python -m venv venv
