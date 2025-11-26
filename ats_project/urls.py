@@ -19,12 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from core.health import HealthCheckView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),  # 'core' app ke URLs include karein
     path('accounts/', include(('django.contrib.auth.urls'))),
     path('resume-builder/', include('resume_builder.urls')),
+    path('health/', HealthCheckView.as_view(), name='health_check'),
 ]
 
 if settings.DEBUG:
